@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "monsRedirector",
+  "version": "1.0",
+  "description": "monsnode.comでリンクをクリックしたとき、即座に動画ページへ推移する",
+  "permissions": ["scripting"],
+  "content_scripts": [
+    {
+      "matches": ["monsnode.com"],
+      "js": ["content.js"]
+    }
+  ]
+}
+
