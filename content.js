@@ -1,6 +1,11 @@
 document.addEventListener("click", async (e) => {
   const a = e.target.closest("a");
   if (!a) return;
+  
+  const regex = /^https?:\/\/monsnode\.com\/(?!v)/;
+  if(!regex.test(a.href)) {
+    return;
+  }
 
   e.preventDefault(); // デフォルトの遷移を止める
 
@@ -16,11 +21,9 @@ document.addEventListener("click", async (e) => {
     const targetLink = doc.querySelector("a")?.href;
 
     if (targetLink) {
-      window.location.href = targetLink;	//タブはそのままに
 	  window.open(targetLink, "_blank");	//新規タブで開く
     } else {
       // 見つからなければ元のリンクに遷移
-      window.location.href = a.href;
 	  window.open(a.href, "_blank");	//新規タブで開く
     }
   } catch (err) {

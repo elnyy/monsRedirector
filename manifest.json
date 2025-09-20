@@ -6,7 +6,7 @@
   "permissions": ["scripting"],
   "content_scripts": [
     {
-      "matches": ["monsnode.com"],
+      "matches": ["*://*.monsnode.com/"],
       "js": ["content.js"]
     }
   ]
